@@ -2,7 +2,7 @@
   "name": "asset-management-network-0fa6",
   "version": "1.0.0",
   "client": {
-    "organization": "sarthak-peer-node-012a",
+    "organization": "joshi-peer-node-efab",
     "connection": {
       "timeout": {
         "peer": {
@@ -16,7 +16,7 @@
     "default-channel": {
       "orderers": ["asset-management-orderer-d2a7"],
       "peers": {
-        "sarthak-peer-node-012a": {
+        "joshi-peer-node-efab": {
           "endorsingPeer": true,
           "chaincodeQuery": true,
           "ledgerQuery": true,
@@ -26,9 +26,9 @@
     }
   },
   "organizations": {
-    "sarthak-peer-node-012a": {
-      "mspid": "sarthak-peer-node-012a",
-      "peers": ["sarthak-peer-node-012a"],
+    "joshi-peer-node-efab": {
+      "mspid": "joshi-peer-node-efab",
+      "peers": ["joshi-peer-node-efab"],
       "certificateAuthorities": ["asset-management-network-0fa6"]
     }
   },
@@ -44,10 +44,10 @@
     }
   },
   "peers": {
-    "sarthak-peer-node-012a": {
-      "url": "grpcs://sarthak-peer-node-012ap.settlemint.com:7051",
+    "joshi-peer-node-efab": {
+      "url": "grpcs://joshi-peer-node-efabp.settlemint.com:7051",
       "grpcOptions": {
-        "ssl-target-name-override": "sarthak-peer-node-012ap.settlemint.com"
+        "ssl-target-name-override": "joshi-peer-node-efabp.settlemint.com"
       },
       "tlsCACerts": {
         "pem": "-----BEGIN CERTIFICATE-----\nMIICVTCCAfugAwIBAgIUf+tiyf0Jww/wcg/hup7+UftEj/cwCgYIKoZIzj0EAwIw\ngYYxCzAJBgNVBAYTAkJFMRgwFgYDVQQIEw9GbGVtaXNoIEJyYWJhbnQxDzANBgNV\nBAcTBkxldXZlbjETMBEGA1UEChMKU2V0dGxlTWludDEPMA0GA1UECxMGRmFicmlj\nMSYwJAYDVQQDEx1hc3NldC1tYW5hZ2VtZW50LW5ldHdvcmstMGZhNjAeFw0yMjA5\nMDExMzA1MDBaFw0zNzA4MjgxMzA1MDBaMIGGMQswCQYDVQQGEwJCRTEYMBYGA1UE\nCBMPRmxlbWlzaCBCcmFiYW50MQ8wDQYDVQQHEwZMZXV2ZW4xEzARBgNVBAoTClNl\ndHRsZU1pbnQxDzANBgNVBAsTBkZhYnJpYzEmMCQGA1UEAxMdYXNzZXQtbWFuYWdl\nbWVudC1uZXR3b3JrLTBmYTYwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATIPSq6\n69gXm89CjdWx6+XPBptmYWFSZqCuXloVxPgG4rvSvVKCFEt4wAAmhLWeR9EnEQfB\nk/ItCI6RNMTaEzqRo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB\n/wIBATAdBgNVHQ4EFgQUvcpyPINvpIGWw+EyGVcGEefUcmMwCgYIKoZIzj0EAwID\nSAAwRQIhAJmhk1BPGC3fZFGJZb0+ThWz0XJV8WUjfbFiiUexUgGbAiAJUSEE8cI+\n3rQk+59cJciJK25+1NN8xAfodlZX204McA==\n-----END CERTIFICATE-----\n"

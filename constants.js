@@ -2,7 +2,7 @@
 
 // CHANNEL
 exports.CHANNEL_NAME = 'default-channel';
-exports.CHAINCODE_NAME = '';
+exports.CHAINCODE_NAME = 'assetTransfer';
 exports.PORT = 3001;
 exports.RED = '\x1b[31m\n';
 exports.GREEN = '\x1b[32m\n';

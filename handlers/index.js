@@ -6,6 +6,7 @@ const {
   RESET,
   GREEN,
   RED,
+  CHANNEL_NAME,
 } = require('../constants');
 const { openGateway } = require('../dlt/gateway');
 const { prettyJSONString } = require('../utils');
@@ -45,7 +46,7 @@ exports.CreateAsset = async (req, res) => {
     // @ts-ignore
     const network = await gateway.getNetwork(CHANNEL_NAME);
     const contract = network.getContract(CHAINCODE_NAME);
-    const result = await contract.submitTransaction(
+    const tx = await contract.submitTransaction(
       'CreateAsset',
       id,
       color,
@@ -53,20 +54,9 @@ exports.CreateAsset = async (req, res) => {
       owner,
       value
     );
-    if (`${result}` !== '') {
-      console.log(
-        `${GREEN}<-- Submit CreateAsset Result: COMMITTED${RESET}`
-      );
-      console.log(
-        `*** Result: ${prettyJSONString(result.toString())}`
-      );
-    } else {
-      console.log(
-        `${RED}<-- Submit CreateAsset Result: FAILED${RESET}`
-      );
-      throw new Error('Error in DLT layer');
-    }
-    res.send({ message: 'Asset Created!' });
+    res.json({
+      status: 'OK - Transaction has been submitted',
+    });
     console.log(`${BLUE}--> CreateAsset END ${RESET}`);
   } catch (err) {
     res.status(500).send({
@@ -113,25 +103,14 @@ exports.TransferAsset = async (req, res) => {
     // @ts-ignore
     const network = await gateway.getNetwork(CHANNEL_NAME);
     const contract = network.getContract(CHAINCODE_NAME);
-    const result = await contract.submitTransaction(
+    const tx = await contract.submitTransaction(
       'TransferAsset',
       id,
       newOwner
     );
-    if (`${result}` !== '') {
-      console.log(
-        `${GREEN}<-- Submit TransferAsset Result: COMMITTED${RESET}`
-      );
-      console.log(
-        `*** Result: ${prettyJSONString(result.toString())}`
-      );
-    } else {
-      console.log(
-        `${RED}<-- Submit TransferAsset Result: FAILED${RESET}`
-      );
-      throw new Error('Error in DLT layer');
-    }
-    res.send({ message: 'Asset Transferred!' });
+    res.json({
+      status: 'OK - Transaction has been submitted',
+    });
     console.log(`${BLUE}--> TransferAsset END ${RESET}`);
   } catch (err) {
     res.status(500).send({
