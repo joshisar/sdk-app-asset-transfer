@@ -1,0 +1,27 @@
+{
+  "name": "cbn",
+  "version": "1.0.0",
+  "description": "cbn training",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SettleMintIndia/LoC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SettleMintIndia/LoC/issues"
+  },
+  "homepage": "https://github.com/SettleMintIndia/LoC#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.17.3",
+    "fabric-ca-client": "^2.2.12",
+    "fabric-common": "^2.2.11",
+    "fabric-network": "^2.2.12"
+  }
+}
