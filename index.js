@@ -9,6 +9,8 @@ const {
   ReadAsset,
   CreateAsset,
   TransferAsset,
+  UpdateAsset,
+  DeleteAsset,
 } = require('./handlers');
 
 async function main() {
@@ -18,11 +20,14 @@ async function main() {
   app.get('/assets', GetAllAssets);
   app.get('/assets/:id', ReadAsset);
   app.post('/assets', CreateAsset);
+  app.put('/assets', UpdateAsset);
   app.post('/assets/transfer', TransferAsset);
+  app.delete('/assets/:id', DeleteAsset);
+
   const server = http.createServer(app);
   server.listen(PORT, async function () {
-    // run this only once
-    // await createCryptoMaterial();
+    // Need to run this only once
+    await createCryptoMaterial();
     console.log(
       `${BLUE} ---------------------  app up on port:${PORT} ---------------------${RESET}`
     );

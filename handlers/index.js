@@ -41,7 +41,7 @@ exports.GetAllAssets = async (req, res) => {
 exports.CreateAsset = async (req, res) => {
   try {
     console.log(`${BLUE}--> CreateAsset START ${RESET}`);
-    const { id, color, size, owner, value } = req.body;
+    const { id, asset_type, currency, value, owner } = req.body;
     const gateway = await openGateway();
     // @ts-ignore
     const network = await gateway.getNetwork(CHANNEL_NAME);
@@ -49,15 +49,49 @@ exports.CreateAsset = async (req, res) => {
     const tx = await contract.submitTransaction(
       'CreateAsset',
       id,
-      color,
-      size,
-      owner,
-      value
+      asset_type,
+      currency,
+      value,
+      owner
     );
-    res.json({
-      status: 'OK - Transaction has been submitted',
-    });
+    if (`${tx.toString()}` !== '') {
+      console.log(`*** Result: ${prettyJSONString(tx.toString())}`);
+      res.send(JSON.parse(tx.toString()));
+    } else {
+      res.status(200).json('');
+    }
     console.log(`${BLUE}--> CreateAsset END ${RESET}`);
+  } catch (err) {
+    res.status(500).send({
+      error: `${err.message}`,
+    });
+  }
+};
+
+// UpdateAsset
+exports.UpdateAsset = async (req, res) => {
+  try {
+    console.log(`${BLUE}--> UpdateAsset START ${RESET}`);
+    const { id, asset_type, currency, value, owner } = req.body;
+    const gateway = await openGateway();
+    // @ts-ignore
+    const network = await gateway.getNetwork(CHANNEL_NAME);
+    const contract = network.getContract(CHAINCODE_NAME);
+    const tx = await contract.submitTransaction(
+      'UpdateAsset',
+      id,
+      asset_type,
+      currency,
+      value,
+      owner
+    );
+    if (`${tx.toString()}` !== '') {
+      console.log(`*** Result: ${prettyJSONString(tx.toString())}`);
+      res.send(JSON.parse(tx.toString()));
+    } else {
+      res.status(200).json('');
+    }
+    console.log(`${BLUE}--> UpdateAsset END ${RESET}`);
   } catch (err) {
     res.status(500).send({
       error: `${err.message}`,
@@ -94,6 +128,30 @@ exports.ReadAsset = async (req, res) => {
   }
 };
 
+// DeleteAsset
+exports.DeleteAsset = async (req, res) => {
+  try {
+    console.log(`${BLUE}--> DeleteAsset START ${RESET}`);
+    const id = req.params.id;
+    const gateway = await openGateway();
+    // @ts-ignore
+    const network = await gateway.getNetwork(CHANNEL_NAME);
+    const contract = network.getContract(CHAINCODE_NAME);
+    const tx = await contract.submitTransaction('DeleteAsset', id);
+    if (`${tx.toString()}` !== '') {
+      console.log(`*** Result: ${prettyJSONString(tx.toString())}`);
+      res.send(JSON.parse(tx.toString()));
+    } else {
+      res.status(200).json('');
+    }
+    console.log(`${BLUE}--> DeleteAsset END ${RESET}`);
+  } catch (err) {
+    res.status(500).send({
+      error: `${err.message}`,
+    });
+  }
+};
+
 // TransferAsset
 exports.TransferAsset = async (req, res) => {
   try {
@@ -108,9 +166,12 @@ exports.TransferAsset = async (req, res) => {
       id,
       newOwner
     );
-    res.json({
-      status: 'OK - Transaction has been submitted',
-    });
+    if (`${tx.toString()}` !== '') {
+      console.log(`*** Result: ${prettyJSONString(tx.toString())}`);
+      res.send(JSON.parse(tx.toString()));
+    } else {
+      res.status(200).json('');
+    }
     console.log(`${BLUE}--> TransferAsset END ${RESET}`);
   } catch (err) {
     res.status(500).send({

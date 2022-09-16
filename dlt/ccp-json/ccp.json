@@ -1,8 +1,8 @@
 {
-  "name": "asset-management-network-0fa6",
+  "name": "asset-network-cdcc",
   "version": "1.0.0",
   "client": {
-    "organization": "joshi-peer-node-efab",
+    "organization": "asset-peer-sarthak-b578",
     "connection": {
       "timeout": {
         "peer": {
@@ -14,9 +14,9 @@
   },
   "channels": {
     "default-channel": {
-      "orderers": ["asset-management-orderer-d2a7"],
+      "orderers": ["asset-orderer-a146"],
       "peers": {
-        "joshi-peer-node-efab": {
+        "asset-peer-sarthak-b578": {
           "endorsingPeer": true,
           "chaincodeQuery": true,
           "ledgerQuery": true,
@@ -26,17 +26,17 @@
     }
   },
   "organizations": {
-    "joshi-peer-node-efab": {
-      "mspid": "joshi-peer-node-efab",
-      "peers": ["joshi-peer-node-efab"],
-      "certificateAuthorities": ["asset-management-network-0fa6"]
+    "asset-peer-sarthak-b578": {
+      "mspid": "asset-peer-sarthak-b578",
+      "peers": ["asset-peer-sarthak-b578"],
+      "certificateAuthorities": ["asset-network-cdcc"]
     }
   },
   "orderers": {
-    "asset-management-orderer-d2a7": {
-      "url": "grpcs://asset-management-orderer-d2a7p.settlemint.com:7050",
+    "asset-orderer-a146": {
+      "url": "grpcs://asset-orderer-a146p.settlemint.com:7050",
       "grpcOptions": {
-        "ssl-target-name-override": "asset-management-orderer-d2a7p.settlemint.com"
+        "ssl-target-name-override": "asset-orderer-a146p.settlemint.com"
       },
       "tlsCACerts": {
         "pem": "-----BEGIN CERTIFICATE-----\nMIICVTCCAfugAwIBAgIUf+tiyf0Jww/wcg/hup7+UftEj/cwCgYIKoZIzj0EAwIw\ngYYxCzAJBgNVBAYTAkJFMRgwFgYDVQQIEw9GbGVtaXNoIEJyYWJhbnQxDzANBgNV\nBAcTBkxldXZlbjETMBEGA1UEChMKU2V0dGxlTWludDEPMA0GA1UECxMGRmFicmlj\nMSYwJAYDVQQDEx1hc3NldC1tYW5hZ2VtZW50LW5ldHdvcmstMGZhNjAeFw0yMjA5\nMDExMzA1MDBaFw0zNzA4MjgxMzA1MDBaMIGGMQswCQYDVQQGEwJCRTEYMBYGA1UE\nCBMPRmxlbWlzaCBCcmFiYW50MQ8wDQYDVQQHEwZMZXV2ZW4xEzARBgNVBAoTClNl\ndHRsZU1pbnQxDzANBgNVBAsTBkZhYnJpYzEmMCQGA1UEAxMdYXNzZXQtbWFuYWdl\nbWVudC1uZXR3b3JrLTBmYTYwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATIPSq6\n69gXm89CjdWx6+XPBptmYWFSZqCuXloVxPgG4rvSvVKCFEt4wAAmhLWeR9EnEQfB\nk/ItCI6RNMTaEzqRo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB\n/wIBATAdBgNVHQ4EFgQUvcpyPINvpIGWw+EyGVcGEefUcmMwCgYIKoZIzj0EAwID\nSAAwRQIhAJmhk1BPGC3fZFGJZb0+ThWz0XJV8WUjfbFiiUexUgGbAiAJUSEE8cI+\n3rQk+59cJciJK25+1NN8xAfodlZX204McA==\n-----END CERTIFICATE-----\n"
@@ -44,10 +44,10 @@
     }
   },
   "peers": {
-    "joshi-peer-node-efab": {
-      "url": "grpcs://joshi-peer-node-efabp.settlemint.com:7051",
+    "asset-peer-sarthak-b578": {
+      "url": "grpcs://asset-peer-sarthak-b578p.settlemint.com:7051",
       "grpcOptions": {
-        "ssl-target-name-override": "joshi-peer-node-efabp.settlemint.com"
+        "ssl-target-name-override": "asset-peer-sarthak-b578p.settlemint.com"
       },
       "tlsCACerts": {
         "pem": "-----BEGIN CERTIFICATE-----\nMIICVTCCAfugAwIBAgIUf+tiyf0Jww/wcg/hup7+UftEj/cwCgYIKoZIzj0EAwIw\ngYYxCzAJBgNVBAYTAkJFMRgwFgYDVQQIEw9GbGVtaXNoIEJyYWJhbnQxDzANBgNV\nBAcTBkxldXZlbjETMBEGA1UEChMKU2V0dGxlTWludDEPMA0GA1UECxMGRmFicmlj\nMSYwJAYDVQQDEx1hc3NldC1tYW5hZ2VtZW50LW5ldHdvcmstMGZhNjAeFw0yMjA5\nMDExMzA1MDBaFw0zNzA4MjgxMzA1MDBaMIGGMQswCQYDVQQGEwJCRTEYMBYGA1UE\nCBMPRmxlbWlzaCBCcmFiYW50MQ8wDQYDVQQHEwZMZXV2ZW4xEzARBgNVBAoTClNl\ndHRsZU1pbnQxDzANBgNVBAsTBkZhYnJpYzEmMCQGA1UEAxMdYXNzZXQtbWFuYWdl\nbWVudC1uZXR3b3JrLTBmYTYwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATIPSq6\n69gXm89CjdWx6+XPBptmYWFSZqCuXloVxPgG4rvSvVKCFEt4wAAmhLWeR9EnEQfB\nk/ItCI6RNMTaEzqRo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB\n/wIBATAdBgNVHQ4EFgQUvcpyPINvpIGWw+EyGVcGEefUcmMwCgYIKoZIzj0EAwID\nSAAwRQIhAJmhk1BPGC3fZFGJZb0+ThWz0XJV8WUjfbFiiUexUgGbAiAJUSEE8cI+\n3rQk+59cJciJK25+1NN8xAfodlZX204McA==\n-----END CERTIFICATE-----\n"
@@ -55,8 +55,8 @@
     }
   },
   "certificateAuthorities": {
-    "asset-management-network-0fa6": {
-      "url": "https://asset-management-network-0fa6.settlemint.com:443",
+    "asset-network-cdcc": {
+      "url": "https://asset-network-cdcc.settlemint.com:443",
       "httpOptions": {
         "verify": true
       },
@@ -64,10 +64,10 @@
         "pem": "-----BEGIN CERTIFICATE-----\nMIICVTCCAfugAwIBAgIUf+tiyf0Jww/wcg/hup7+UftEj/cwCgYIKoZIzj0EAwIw\ngYYxCzAJBgNVBAYTAkJFMRgwFgYDVQQIEw9GbGVtaXNoIEJyYWJhbnQxDzANBgNV\nBAcTBkxldXZlbjETMBEGA1UEChMKU2V0dGxlTWludDEPMA0GA1UECxMGRmFicmlj\nMSYwJAYDVQQDEx1hc3NldC1tYW5hZ2VtZW50LW5ldHdvcmstMGZhNjAeFw0yMjA5\nMDExMzA1MDBaFw0zNzA4MjgxMzA1MDBaMIGGMQswCQYDVQQGEwJCRTEYMBYGA1UE\nCBMPRmxlbWlzaCBCcmFiYW50MQ8wDQYDVQQHEwZMZXV2ZW4xEzARBgNVBAoTClNl\ndHRsZU1pbnQxDzANBgNVBAsTBkZhYnJpYzEmMCQGA1UEAxMdYXNzZXQtbWFuYWdl\nbWVudC1uZXR3b3JrLTBmYTYwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATIPSq6\n69gXm89CjdWx6+XPBptmYWFSZqCuXloVxPgG4rvSvVKCFEt4wAAmhLWeR9EnEQfB\nk/ItCI6RNMTaEzqRo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB\n/wIBATAdBgNVHQ4EFgQUvcpyPINvpIGWw+EyGVcGEefUcmMwCgYIKoZIzj0EAwID\nSAAwRQIhAJmhk1BPGC3fZFGJZb0+ThWz0XJV8WUjfbFiiUexUgGbAiAJUSEE8cI+\n3rQk+59cJciJK25+1NN8xAfodlZX204McA==\n-----END CERTIFICATE-----\n"
       },
       "registrar": {
-        "enrollId": "asset-management-network-0fa6",
-        "enrollSecret": "7e9e18ad2a314404f135"
+        "enrollId": "asset-network-cdcc",
+        "enrollSecret": "c05740b16542c13569a0"
       },
-      "caName": "asset-management-network-0fa6"
+      "caName": "asset-network-cdcc"
     }
   }
 }
